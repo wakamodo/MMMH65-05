@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPICE</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <style>
+        @media screen and (min-width:992px) {
+            ul {
+                /* justify-content: space-between; */
+                display: flex;
+                flex-direction: row;
+            }
+
+            li {
+                margin: auto;
+                padding-top: 30px;
+            }
+
+            li a:hover {
+                color: bisque;
+            }
+
+            .shop {
+                margin-top: 25px;
+            }
+
+            .shop a:hover {
+                color: bisque;
+            }
+
+            .header .row {
+                align-items: flex-start !important;
+            }
+
+            .logo img {
+                width: 8em !important;
+                transform: translateX(100%);
+
+                /* text-align: center !important; */
+            }
+
+            .col-auto {
+                display: show;
+            }
+
+            .mycard {
+                width: 100% !important;
+            }
+
+            .mycard img {
+                width: 100% !important;
+                height: 55vh !important;
+            }
+
+            .mycard .word {
+                /* margin-left: 100vh;
+                margin-right: 100vh; */
+            }
+
+
+
+            .col-lg-auto {
+                width: 30%;
+
+            }
+
+            .ticket .row {
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+
+            .ticket .corl {
+                width: 100%;
+                height: 55vh;
+            }
+
+            .food {
+                height: 50vh;
+                margin: auto;
+            }
+
+            .food .row .col {
+                justify-content: center;
+                margin: auto;
+            }
+
+
+            .corl {
+                height: 35vh !important;
+            }
+
+            .mybox {
+                width: 50vh;
+
+            }
+
+            .mybox img {
+                height: 32.2vh;
+            }
+
+            /* .Text{
+                align-items: flex-end;
+            }
+             */
+
+
+             /* 圖片縮放 */
+            .pic {
+                width: 500px;
+                height: 350px;
+                overflow: hidden;
+            }
+
+            .pic img {
+                transform: scale(1, 1);
+                transition: all .5s ease-out;
+            }
+
+            .pic img:hover {
+                transform: scale(1.2, 1.2);
+            }
+
+
+            .icon a:hover{
+                color: #9a855a !important;
+            }
+
+
+        }
+
+        /* .container, .row{
+            gutter
+        } */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .col {
+            align-items: center;
+
+            /* border: .5px solid red; */
+
+        }
+
+        .logo img {
+            width: 100%;
+            border-radius: 50% 20%;
+        }
+
+
+        .logo {
+            display: inline;
+            margin: auto;
+            position: relative;
+            z-index: 100;
+
+        }
+
+        a {
+            display: flex;
+            display: contents;
+            color: white;
+        }
+
+        .transportation.col:nth-child(3) {
+            justify-content: flex-end;
+            display: flex;
+        }
+
+        .transportation.col:nth-child(2) {
+            transform: translateY(15px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .transportation.col:nth-child(1) {
+            display: flex;
+        }
+
+        .header {
+
+            justify-content: space-between;
+            background: black;
+            height: 80px;
+        }
+
+
+        .mycard {
+            width: 150px;
+            /* min-height: 560px; */
+            background: #000;
+            width: 100%;
+            /* position: relative; */
+
+        }
+
+        .mycard img {
+
+            object-fit: cover;
+            width: 100%;
+            height: 480px;
+        }
+/* 按鈕2 */
+
+.btn-one {
+                color: #ffffff;
+                transition: all 0.3s;
+                position: relative;
+            }
+
+            .btn-one span {
+                transition: all 0.3s;
+            }
+
+            .btn-one::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+                transition: all 0.3s;
+                border-top-width: 2px;
+                border-bottom-width: 2px;
+                border-top-style: solid;
+                border-bottom-style: solid;
+                border-top-color: rgba(255, 255, 255, 0.5);
+                border-bottom-color: rgba(255, 255, 255, 0.5);
+                transform: scale(0.1, 1);
+
+            }
+
+            .btn-one:hover span {
+                letter-spacing: 2px;
+
+            }
+
+            .btn-one:hover::before {
+                opacity: 1;
+                transform: scale(1, 1);
+            }
+
+            .btn-one::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                transition: all 0.3s;
+                background-color: rgba(255, 255, 255, 0.1);
+
+            }
+
+            .btn-one:hover::after {
+                opacity: 0;
+                transform: scale(0.1, 1);
+
+            }
+
+            .box-1 {
+                background-color: #9a855a;
+                /* height: 10vh;  */
+            }
+
+
+            /* 按鈕3 */
+
+            .btn-three {
+                color: #FFF;
+                transition: all 0.5s;
+                position: relative;
+            }
+
+            .btn-three::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background-color: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s;
+            }
+
+            .btn-three:hover::before {
+                opacity: 0;
+                transform: scale(0.5, 0.5);
+            }
+
+            .btn-three::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+                transition: all 0.3s;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                transform: scale(1.2, 1.2);
+            }
+
+            .btn-three:hover::after {
+                opacity: 1;
+                transform: scale(1, 1);
+            }
+
+            .box-3{
+                background-color: #9a855a;
+            }
+
+
+
+        .word {
+            width: 100%;
+            position: absolute;
+            color: white;
+            padding: 0 20px;
+            margin-top: -100px;
+
+        }
+
+        .word h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .word p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            padding-bottom: 10px;
+
+        }
+
+        button {
+            color: white;
+            border: none;
+            background: #9a855a;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 21px;
+            text-align: center;
+            width: 80%;
+            min-height: 45px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-bottom: 30px;
+            width: 100%;
+            /* margin: 0;padding: 0; */
+        }
+
+        .corl img {
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .corl {
+            background: #000000;
+            margin-bottom: 40px;
+
+        }
+
+        .food img {
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .food {
+            background: #000000;
+            margin-bottom: 10px;
+
+        }
+
+        .text {
+
+            color: white;
+        }
+
+        .tran img {
+            width: 100%;
+            /* transform: rotate(90deg); */
+            /* transform: translate(); */
+
+
+        }
+
+        .box {
+            width: 100%;
+            margin: auto;
+        }
+
+        .text-cen {
+            text-align: center;
+
+            /* color: white; */
+        }
+
+        .jpeg {
+            min-width: 100%;
+            min-height: 10vh;
+        }
+
+        .seation-dark {
+            background-color: #000;
+
+        }
+
+        .Title {
+            padding: 30px;
+        }
+
+        /* .col {
+            margin-bottom: 50px;
+        } */
+
+        .Mycard {
+            border: 1px solid rgb(185, 185, 185);
+        }
+
+        .footerWord {
+
+            background-color: #9a855a;
+            color: white;
+        }
+
+        .footer {
+            background-color: #9a855a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container gx-0 p-0 mb-0">
+            <div class="header-10">
+
+                <div class="row m-0 transportation">
+
+                    <div class="col">
+                        <div class="bar d-lg-none">
+                            <a class="fs-1" href="">
+
+                                <i class="fa-solid fa-bars"></i>
+
+                            </a>
+                        </div>
+
+                        <div class="logo d-none d-lg-inline">
+
+                            <a class="" href="">
+                                <img src="img/S__12427272.jpg" alt="">
+                            </a>
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="col ">
+
+                        <div class="col-auto d-none d-lg-inline">
+                            <ul class="list-unstyled m-0">
+                                <li class="me-3">
+                                    <a href="">Production process</a>
+                                </li>
+                                <li>
+                                    <a href="">Spice Rack</a>
+                                </li>
+
+                                <li>
+                                    <a href="">SHOP & BY</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="logo d-lg-none">
+
+                            <a class="" href="">
+                                <img src="img/S__12427272.jpg" alt="">
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col">
+                        <div class="shop ms-auto">
+                            <a class="fs-3 " href="">
+
+                                <i class="offset-6 fa-solid fa-cart-shopping "></i>
+
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="headersection">
+        <div class="header gx-0 p-0">
+
+            <div class="row gx-0">
+
+                <div class="col-12">
+                    <div class="mycard">
+
+
+                        <img src="img/pexels-polina-tankilevitch-3735145.jpg" alt="">
+
+                        <div class="myword ">
+                            <div class="word">
+
+                                <h2>Back in Stock</h2>
+
+                                <p>New inventory on some of our most popular models. Ready to ship - Shop Now!</p>
+
+                                <button type="button" class="w-100 " style="margin: auto; ">
+                                    GO SHOP >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ticket m-3">
+        <div class="container gx-0">
+            <div class="row ">
+                <!-- <div class="col">
+                <div class="corl">
+
+                    <img src="https://images.ctfassets.net/m8onsx4mm13s/4qm6G6cNU4mSAb566UuIJ1/5dfd9c110728306b565b59671a95cc83/In-Time-For-Holidays__2_.png"
+                        alt="">
+
+
+
+                    <div class="text">
+                        <h3>FREE SHIPPING</h3>
+                        <p>On US online orders over $50.</p>
+                    </div>
+
+
+                </div>
+            </div> -->
+
+
+                <div class="col-12 col-lg-auto ">
+                    <div class="corl" style="margin-top: 32em;">
+
+                        <img src="https://images.ctfassets.net/m8onsx4mm13s/4qm6G6cNU4mSAb566UuIJ1/5dfd9c110728306b565b59671a95cc83/In-Time-For-Holidays__2_.png"
+                            alt="">
+
+
+
+                        <div class="text p-3">
+                            <h3>FREE SHIPPING</h3>
+                            <p>On US online orders over $50.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-lg-auto">
+                    <div class="corl">
+
+                        <img src="https://images.ctfassets.net/m8onsx4mm13s/6IvzKzqfqdVRKgZHjBqFIk/de259c13ae15133900b72c494b76c694/Lifetime-Warranty__2_.png"
+                            alt="">
+
+                        <div class="text p-3">
+                            <h3>LIFETIME WARRANTY</h3>
+                            <p>Free, limited warranty on material and workmanship.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12 col-lg-auto">
+                    <div class="corl">
+
+                        <img src="https://images.ctfassets.net/m8onsx4mm13s/24dB0X9zp0nHGgGooFJUGn/2d7bed365abe0a24ffa79eb21b4e1f3a/Financing-Available__2_.png"
+                            alt="">
+
+                        <div class="text p-3">
+                            <h3>FINANCING AVAILABLE</h3>
+                            <p>Options available through Klarna at checkout.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="m-auto text-center">Production Process</h1>
+            </div>
+        </div>
+
+
+        <div class="row  gx-0 ">
+
+            <div class="col-12 col-lg-4">
+
+
+
+                <div class="spices tran food p-5 mb-5">
+
+                    <div class="mybox w-100">
+
+                        <img src="img/pexels-digital-buggu-368689.jpg" alt="">
+
+                    </div>
+
+                    <div class="text p-3">
+
+                        <h3>RAW MATERIALS</h3>
+                        <p>Please feel free to eat freshly picked.</p>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-12 col-lg-4">
+                <div class=" spices tran food p-5 mb-5">
+                    <div class="mybox w-100">
+                        <img class="w-100 h-100" style="max-height: 300px;" src="img/pexels-delphine-hourlay-691155.jpg"
+                            alt="">
+                    </div>
+                    <div class="text p-3">
+                        <h3>GRIND INTO PARTICLES</h3>
+                        <p>Please feel free to eat freshly picked.</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-12 col-lg-4">
+                <div class=" spices tran food p-5 mb-5">
+                    <div class="mybox w-100 ">
+                        <img style="max-height: 300px;" src="img/pexels-marta-dzedyshko-2067473.jpg" alt="">
+                    </div>
+                    <div class="text p-3">
+                        <h3>COOKING</h3>
+                        <p>Please feel free to eat freshly picked.</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="seation-dark speaker-into">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-10 m-auto mb-3">
+
+                    <h1 style="color:white" class="mt-5">Cooking Style</h1>
+                    <div class="bg-white">
+
+                        <div class="row">
+
+                            <div class="col-12 col-lg-6 ">
+                                <div class="jpeg p-3 pic">
+                                    <img class="w-100" src="img/pexels-trista-chen-723198.jpg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 d-flex align-items-lg-center justify-content-center">
+                                <div style="color: black; width: 100%;" class="p-3">
+                                    <h3>Japanese cuisine</h3>
+                                    <h1 style="color: black;">Cooking type</h1>
+                                    <p>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            Ingredients: beef onion garlic butter egg rice...
+                                        </li>
+                                    </ul>
+
+
+
+
+                                    </p>
+
+                                    <button type="button " class="mt-lg-5 w-100 btn btn-one box-1">
+                                        SEE MORE >
+                                    </button>
+
+                                    <!-- <p>Choose the spice jar you want.</p>
+                                    <button type="button">SHOP NOW</button> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 m-auto mb-3">
+                    <div class=" bg-white">
+
+                        <div class="row">
+
+                            <div class="col-12 col-lg-6">
+                                <div class="jpeg p-3 pic">
+                                    <img class="w-100" src="img/pexels-senuscape-2313686.jpg" alt="">
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-lg-6 d-flex align-items-lg-center justify-content-center">
+                                <div style="color: black;width: 100%;" class="p-3">
+                                    <h3>Korean cuisine</h3>
+                                    <h1 style="color: black;">Cooking type</h1>
+                                    <!-- <p>Choose the spice jar you want.</p>
+                                    <button type="button">SHOP NOW</button> -->
+                                    <p>
+
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            Ingredients: pork belly slices kimchi snow white...
+
+                                        </li>
+                                    </ul>
+
+
+
+
+                                    </p>
+                                    <button type="button" class="mt-5 w-100 btn btn-one box-1">
+                                        SEE MORE >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 m-auto mb-3">
+                    <div class=" bg-white">
+
+
+                        <div class="row">
+
+                            <div class="col-12 col-lg-6 ">
+                                <div class="jpeg p-3 pic">
+                                    <img class="w-100" src="img/pexels-wallace-araujo-9058939.jpg" alt="">
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-lg-6 d-flex align-items-lg-center justify-content-center">
+                                <div style="color: black;width: 100%;" class="p-3">
+                                    <h3>Italian Cuisine</h3>
+                                    <h1 style="color: black;">Cooking type</h1>
+                                    <!-- <p>Choose the spice jar you want.</p>
+                                    <button type="button">SHOP NOW</button> -->
+                                    <p>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            Ingredients: beef onion garlic butter egg rice ...
+
+                                        </li>
+                                    </ul>
+
+
+
+
+
+
+
+                                    </p>
+                                    <button type="button" class="mt-lg-5 w-100 btn btn-one box-1 ">
+                                        SEE MORE >
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="seation">
+        <div class="container">
+            <div class="row">
+                <h1 class="mt-5">SHOP & BY</h1>
+
+
+                <div class="col-12 col-lg-6">
+                    <div class="Mycard mb-5">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="jpeg">
+                                    <img class="w-100" src="img/pexels-polina-tankilevitch-3735145.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-center justify-content-center">
+                                <div class="text-cen" style="color: black;">
+                                    <h3 class="m-0">SPICE JAR</h3>
+                                    <p class="m-0">Choose the spice jar you want.</p>
+                                    <button class="mt-5 btn btn-three box-3" type="button">SEE MORE ></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12 col-lg-6">
+                    <div class="Mycard">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="jpeg">
+                                    <img class="w-100" src="img/pexels-pavel-danilyuk-6996094.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-center justify-content-center">
+                                <div class="text-cen" style="color: black;">
+                                    <h3 class="m-0">SPICE JAR</h3>
+                                    <p class="m-0">Choose the spice jar you want.</p>
+                                    <button class="mt-5 btn btn-three box-3" type="button">SEE MORE ></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container mb-0">
+            <div class="row">
+                <div class="col text-cen footerWord mt-5">
+                    <small>By submitting this form, you agree to our Terms & Conditions and Privacy
+                        Policy.</small>
+                    <p>Follow us:</p>
+                </div>
+
+                <div class="icon text-cen">
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                      
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-twitter"></i>
+                        
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-youtube"></i>
+                       
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-facebook"></i>
+                        
+                    </a>
+
+                </div>
+                <small class="mt-5 footerWord w-100 text-cen">
+                    Copyright 2023 Gibson Brands, Inc. All rights reserved.
+
+                    Privacy Policy
+                    Terms & Conditions
+                    TradeMarks of Gibson Brands, Inc.
+                </small>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
