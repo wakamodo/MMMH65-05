@@ -118,7 +118,7 @@
              */
 
 
-             /* 圖片縮放 */
+            /* 圖片縮放 */
             .pic {
                 width: 500px;
                 height: 350px;
@@ -135,9 +135,11 @@
             }
 
 
-            .icon a:hover{
+            .icon a:hover {
                 color: #9a855a !important;
             }
+
+
 
 
         }
@@ -145,6 +147,7 @@
         /* .container, .row{
             gutter
         } */
+
         * {
             margin: 0;
             padding: 0;
@@ -157,6 +160,20 @@
 
         }
 
+
+
+        .menu {
+            position: relative;
+            z-index: 200;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 200;
+            }
+        }
+
         .logo img {
             width: 100%;
             border-radius: 50% 20%;
@@ -167,7 +184,7 @@
             display: inline;
             margin: auto;
             position: relative;
-            z-index: 100;
+            z-index: 0;
 
         }
 
@@ -197,6 +214,7 @@
             justify-content: space-between;
             background: black;
             height: 80px;
+
         }
 
 
@@ -215,120 +233,121 @@
             width: 100%;
             height: 480px;
         }
-/* 按鈕2 */
 
-.btn-one {
-                color: #ffffff;
-                transition: all 0.3s;
-                position: relative;
-            }
+        /* 按鈕2 */
 
-            .btn-one span {
-                transition: all 0.3s;
-            }
+        .btn-one {
+            color: #ffffff;
+            transition: all 0.3s;
+            position: relative;
+        }
 
-            .btn-one::before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                opacity: 0;
-                transition: all 0.3s;
-                border-top-width: 2px;
-                border-bottom-width: 2px;
-                border-top-style: solid;
-                border-bottom-style: solid;
-                border-top-color: rgba(255, 255, 255, 0.5);
-                border-bottom-color: rgba(255, 255, 255, 0.5);
-                transform: scale(0.1, 1);
+        .btn-one span {
+            transition: all 0.3s;
+        }
 
-            }
+        .btn-one::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border-top-width: 2px;
+            border-bottom-width: 2px;
+            border-top-style: solid;
+            border-bottom-style: solid;
+            border-top-color: rgba(255, 255, 255, 0.5);
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+            transform: scale(0.1, 1);
 
-            .btn-one:hover span {
-                letter-spacing: 2px;
+        }
 
-            }
+        .btn-one:hover span {
+            letter-spacing: 2px;
 
-            .btn-one:hover::before {
-                opacity: 1;
-                transform: scale(1, 1);
-            }
+        }
 
-            .btn-one::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                transition: all 0.3s;
-                background-color: rgba(255, 255, 255, 0.1);
+        .btn-one:hover::before {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
 
-            }
+        .btn-one::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.1);
 
-            .btn-one:hover::after {
-                opacity: 0;
-                transform: scale(0.1, 1);
+        }
 
-            }
+        .btn-one:hover::after {
+            opacity: 0;
+            transform: scale(0.1, 1);
 
-            .box-1 {
-                background-color: #9a855a;
-                /* height: 10vh;  */
-            }
+        }
+
+        .box-1 {
+            background-color: #9a855a;
+            /* height: 10vh;  */
+        }
 
 
-            /* 按鈕3 */
+        /* 按鈕3 */
 
-            .btn-three {
-                color: #FFF;
-                transition: all 0.5s;
-                position: relative;
-            }
+        .btn-three {
+            color: #FFF;
+            transition: all 0.5s;
+            position: relative;
+        }
 
-            .btn-three::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                background-color: rgba(255, 255, 255, 0.1);
-                transition: all 0.3s;
-            }
+        .btn-three::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
 
-            .btn-three:hover::before {
-                opacity: 0;
-                transform: scale(0.5, 0.5);
-            }
+        .btn-three:hover::before {
+            opacity: 0;
+            transform: scale(0.5, 0.5);
+        }
 
-            .btn-three::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                opacity: 0;
-                transition: all 0.3s;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                transform: scale(1.2, 1.2);
-            }
+        .btn-three::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transform: scale(1.2, 1.2);
+        }
 
-            .btn-three:hover::after {
-                opacity: 1;
-                transform: scale(1, 1);
-            }
+        .btn-three:hover::after {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
 
-            .box-3{
-                background-color: #9a855a;
-            }
+        .box-3 {
+            background-color: #9a855a;
+        }
 
 
 
@@ -450,24 +469,175 @@
         .footer {
             background-color: #9a855a;
         }
+
+        .ham {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, .3);
+            display: block;
+            position: relative;
+        }
+
+        .ham-origin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .ham-bar {
+            height: 2px;
+            width: 26px;
+            position: absolute;
+            background: #eaa315;
+            margin: -1px 0 0 -13px;
+            transition: all .5s;
+        }
+
+        .ham-bar--top {
+            transform: translateY(-6px);
+        }
+
+        .ham-bar--bottom {
+            transform: translateY(6px);
+        }
+
+        #nav-toggle {
+            display: none;
+        }
+
+        #nav-toggle:checked~.ham .ham-bar--middle {
+            opacity: 0;
+        }
+
+        #nav-toggle:checked~.ham .ham-bar--top {
+            transform: rotate(-45deg);
+        }
+
+        #nav-toggle:checked~.ham .ham-bar--bottom {
+            transform: rotate(45deg);
+        }
+
+        /* Nav Style */
+
+        .menu {
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, .3);
+            /* 用 translate 把選單藏到畫面右邊去 */
+            transform: translateX(100%);
+            transition: transform .5s;
+        }
+
+        #nav-toggle:checked~.menu {
+            transform: none;
+        }
+
+        .menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-item+.menu-item {
+            margin-top: 20px;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+        }
+
+        .menu-item:hover {
+            background-color: #eaa315;
+        }
+
+        a:hover {
+            color: white;
+
+        }
+
+        .header-10 {
+            background: #aaaa;
+            height: 8.8%;
+            position: fixed;
+            /* justify-content: space-between; */
+            z-index: 200;
+        }
+
+        .header-1 {
+            background: #aaaa;
+            height: 8.8%;
+            position: fixed;
+            /* justify-content: space-between; */
+            z-index: 200;
+        }
+
+        .list-unstyled a {
+            color: #eaa315;
+        }
+        .fs-3 {
+            color: #eaa315;
+
+        }
+        .fs-3:hover {
+            
+            color: bisque;
+        }
     </style>
 </head>
 
 <body>
+
+
     <div class="header">
-        <div class="container gx-0 p-0 mb-0">
-            <div class="header-10">
+        <div class="container gx-0 p-0 mb-0 row">
+            <div class="header-10 col-lg-none">
 
                 <div class="row m-0 transportation">
 
-                    <div class="col">
-                        <div class="bar d-lg-none">
-                            <a class="fs-1" href="">
+                    <div class="col ">
 
-                                <i class="fa-solid fa-bars"></i>
+                        <div class="bar d-lg-none right">
+                            <input id="nav-toggle" type="checkbox">
+                            <label for="nav-toggle" class="ham">
+                                <div class="ham-origin">
+                                    <div class="ham-bar ham-bar--top"></div>
+                                    <div class="ham-bar ham-bar--middle"></div>
+                                    <div class="ham-bar ham-bar--bottom"></div>
+                                </div>
+                            </label>
 
-                            </a>
+                            <nav class="menu d-lg-none">
+                                <ul class="menu-list">
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#">Go To Top</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#Production">Production Process</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#Cooking">Cooking Style</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#SHOP">SHOP & BY</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#Follow">Follow us</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
+
+
 
                         <div class="logo d-none d-lg-inline">
 
@@ -483,9 +653,105 @@
 
 
 
+                    <div class="col d-none d-lg-inline">
+
+                        <div class="col-auto d-none d-lg-inline ">
+                            <ul class="list-unstyled m-0">
+                                <li class="me-3">
+                                    <a href="#Production">Production process</a>
+                                </li>
+                                <li>
+                                    <a href="#Cooking">Cooking Style</a>
+                                </li>
+
+                                <li>
+                                    <a href="#SHOP">SHOP & BY</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="logo d-lg-none Logo-1" style="width: 30%;">
+
+                        <a class="" href="">
+                            <img src="img/S__12427272.jpg" alt="">
+                        </a>
+
+                    </div>
+
+                    <div class="col left">
+                        <div class="shop ms-auto">
+                            <a class="fs-3 "  href="">
+
+                                <i class="offset-6 fa-solid fa-cart-shopping "></i>
+
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="header-1 col d-none">
+
+                <div class="row m-0 transportation">
+
                     <div class="col ">
 
-                        <div class="col-auto d-none d-lg-inline">
+                        <div class="bar d-lg-none right">
+                            <input id="nav-toggle" type="checkbox">
+                            <label for="nav-toggle" class="ham">
+                                <div class="ham-origin">
+                                    <div class="ham-bar ham-bar--top"></div>
+                                    <div class="ham-bar ham-bar--middle"></div>
+                                    <div class="ham-bar ham-bar--bottom"></div>
+                                </div>
+                            </label>
+
+                            <nav class="menu d-lg-none">
+                                <ul class="menu-list">
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#">Go To Top</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#Production">Production Process</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#Cooking">Cooking Style</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#SHOP">SHOP & BY</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#Follow">Follow us</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+
+
+                        <div class="logo d-none d-lg-inline">
+
+                            <a class="" href="">
+                                <img src="img/S__12427272.jpg" alt="">
+                            </a>
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="col d-none d-lg-inline">
+
+                        <div class="col-auto d-none d-lg-inline ">
                             <ul class="list-unstyled m-0">
                                 <li class="me-3">
                                     <a href="">Production process</a>
@@ -501,19 +767,17 @@
                             </ul>
                         </div>
 
-                        <div class="logo d-lg-none">
+                    </div>
 
-                            <a class="" href="">
-                                <img src="img/S__12427272.jpg" alt="">
-                            </a>
+                    <div class="logo d-lg-none Logo-1" style="width: 30%;">
 
-                        </div>
+                        <a class="" href="">
+                            <img src="img/S__12427272.jpg" alt="">
+                        </a>
 
                     </div>
 
-
-
-                    <div class="col">
+                    <div class="col left">
                         <div class="shop ms-auto">
                             <a class="fs-3 " href="">
 
@@ -525,14 +789,12 @@
 
 
 
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
+
+
     <div class="headersection">
         <div class="header gx-0 p-0">
 
@@ -640,7 +902,7 @@
             </div>
         </div>
     </div>
-    <div class="container ">
+    <div class="container Production" id="Production">
 
         <div class="row">
             <div class="col">
@@ -718,7 +980,7 @@
 
     <div class="seation-dark speaker-into">
 
-        <div class="container">
+        <div class="container" id="Cooking">
             <div class="row">
                 <div class="col-10 m-auto mb-3">
 
@@ -850,7 +1112,7 @@
     </div>
 
     <div class="seation">
-        <div class="container">
+        <div class="container" id="SHOP">
             <div class="row">
                 <h1 class="mt-5">SHOP & BY</h1>
 
@@ -903,7 +1165,7 @@
         </div>
     </div>
 
-    <div class="footer">
+    <div class="footer" id="Follow">
         <div class="container mb-0">
             <div class="row">
                 <div class="col text-cen footerWord mt-5">
@@ -915,19 +1177,19 @@
                 <div class="icon text-cen">
                     <a href="">
                         <i class="fa-brands fa-instagram"></i>
-                      
+
                     </a>
                     <a href="">
                         <i class="fa-brands fa-twitter"></i>
-                        
+
                     </a>
                     <a href="">
                         <i class="fa-brands fa-youtube"></i>
-                       
+
                     </a>
                     <a href="">
                         <i class="fa-brands fa-facebook"></i>
-                        
+
                     </a>
 
                 </div>
